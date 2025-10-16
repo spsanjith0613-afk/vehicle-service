@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Confirmation</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #00b4db, #0083b0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            color: #ffde59;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffde59;
+            color: #000;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        a:hover {
+            background: #ffd633;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>✅ Service Entry Received!</h2>
+        <p><strong>Vehicle Model:</strong> {{ model }}</p>
+        <p><strong>Vehicle Age:</strong> {{ age }} years</p>
+        <p><strong>Service Type:</strong> {{ service_type }}</p>
+        <p><strong>Service Time:</strong> {{ service_time }}</p>
+        <a href="/">⬅ Go Back</a>
+    </div>
+</body>
+</html>

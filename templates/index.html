@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Service Entry</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://cdn.pixabay.com/photo/2016/04/28/19/46/motorcycle-1357768_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Animated moving bike silhouette */
+.bike {
+  position: absolute;
+  bottom: 30px;
+  left: -200px;
+  width: 150px;
+  animation: ride 12s linear infinite;
+  opacity: 0.8;
+}
+@keyframes ride {
+  0% { left: -200px; transform: scaleX(1); }
+  50% { left: calc(100% - 150px); transform: scaleX(1); }
+  51% { transform: scaleX(-1); }
+  100% { left: -200px; transform: scaleX(-1); }
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px 35px;
+  border-radius: 20px;
+  width: 380px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h2 {
+  color: #ffde59;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 222, 89, 0.6);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.85);
+  color: #000;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  background: linear-gradient(90deg,#ffde59,#ffd633);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255,222,89,0.4);
+}
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255,222,89,0.9);
+}
+
+.footer {
+  margin-top: 15px;
+  font-size: 13px;
+  opacity: 0.9;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+  <img src="https://cdn-icons-png.flaticon.com/512/3176/3176295.png" alt="bike" class="bike">
+
+  <div class="form-container">
+    <h2>🏍 Vehicle Service Entry</h2>
+    <form action="/submit" method="post">
+      <label>Vehicle Model:</label>
+      <input type="text" name="model" placeholder="Ex: Yamaha MT-15" required>
+
+      <label>Vehicle Age (in years):</label>
+      <input type="number" name="age" placeholder="Ex: 2" required>
+
+      <label>Service Type:</label>
+      <select name="service_type" required>
+        <option value="General Service">General Service</option>
+        <option value="Oil Change">Oil Change</option>
+        <option value="Water Wash">Water Wash</option>
+        <option value="Full Checkup">Full Checkup</option>
+      </select>
+
+      <label>Preferred Service Time:</label>
+      <input type="time" name="service_time" required>
+
+      <button type="submit">Submit 🚀</button>
+    </form>
+    <div class="footer">Made with ❤️ in Flask</div>
+  </div>
+</body>
+</html>
+
+
